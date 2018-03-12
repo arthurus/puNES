@@ -267,6 +267,7 @@ void dlgInput::update_dialog() {
 	update_text_shortcut(parentMain->ui->action_Save_settings, SET_INP_SC_SAVE_SETTINGS);
 	update_text_shortcut(parentMain->ui->action_Save_state, SET_INP_SC_SAVE_STATE);
 	update_text_shortcut(parentMain->ui->action_Load_state, SET_INP_SC_LOAD_STATE);
+	update_text_shortcut(parentMain->ui->action_Rewind_state, SET_INP_SC_REWIND_STATE);
 	update_text_shortcut(parentMain->ui->action_Increment_slot, SET_INP_SC_INC_SLOT);
 	update_text_shortcut(parentMain->ui->action_Decrement_slot, SET_INP_SC_DEC_SLOT);
 

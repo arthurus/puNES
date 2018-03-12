@@ -374,6 +374,14 @@ void timeLine::retranslateUi() {
 			slider->width());// +  (slider->sizeHandle() / 2));
 #endif
 }
+void timeLine::rewind() {
+	emu_pause(TRUE);
+	if (slider->value() > 0 && tl.frames < (tl.frames_snap / TL_SNAP_SEC)) {
+		s_action_triggered(QAbstractSlider::SliderSingleStepSub);
+	}
+	timeline_back(TL_NORMAL, slider->value());
+	emu_pause(FALSE);
+}
 void timeLine::timeline_update_label(int value) {
 	if (tl.button) {
 		BYTE dec = 0;

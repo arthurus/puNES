@@ -84,6 +84,7 @@ class timeLine: public QWidget {
 		void timeline_pressed(BYTE *type);
 		void timeline_released(BYTE *type);
 		void retranslateUi();
+		void rewind();
 
 	private:
 		void timeline_update_label(int value);

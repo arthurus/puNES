@@ -182,6 +182,7 @@ class mainWindow: public QMainWindow {
 		void s_save_settings();
 		void s_state_save_slot_action();
 		void s_state_save_slot_incdec();
+		void s_state_rewind_action();
 		void s_state_save_slot_set();
 		void s_state_save_file();
 		void s_state_load_file();

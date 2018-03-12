@@ -133,6 +133,7 @@ enum inp_element {
 	SET_INP_SC_SAVE_SETTINGS,
 	SET_INP_SC_SAVE_STATE,
 	SET_INP_SC_LOAD_STATE,
+	SET_INP_SC_REWIND_STATE,
 	SET_INP_SC_INC_SLOT,
 	SET_INP_SC_DEC_SLOT,
 
@@ -909,6 +910,7 @@ static const _settings inp_cfg[] = {
 	{uL("shortcuts"), uL("save settings"),            uL("Alt+W,NULL"),      NULL, NULL, {0, NULL}},
 	{uL("shortcuts"), uL("save state"),               uL("F1,NULL"),         NULL, NULL, {0, NULL}},
 	{uL("shortcuts"), uL("load state"),               uL("F4,NULL"),         NULL, NULL, {0, NULL}},
+	{uL("shortcuts"), uL("rewind state"),             uL("Backspace,NULL"),  NULL, NULL, {0, NULL}},
 	{uL("shortcuts"), uL("increment state slot"),     uL("F3,NULL"),         NULL, NULL, {0, NULL}},
 	{uL("shortcuts"), uL("decrement state slot"),     uL("F2,NULL"),         NULL, NULL, {0, NULL}},
 

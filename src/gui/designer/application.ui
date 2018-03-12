@@ -1551,6 +1551,11 @@
     <string>L&amp;oad state</string>
    </property>
   </action>
+  <action name="action_Rewind_state">
+   <property name="text">
+    <string>&amp;Rewind state</string>
+   </property>
+  </action>
   <action name="action_Increment_slot">
    <property name="icon">
     <iconset resource="application.qrc">

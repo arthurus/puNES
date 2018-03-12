@@ -1266,6 +1266,8 @@ void mainWindow::shortcuts() {
 			SLOT(s_state_save_slot_action()));
 	connect_shortcut(ui->action_Load_state, SET_INP_SC_LOAD_STATE,
 			SLOT(s_state_save_slot_action()));
+	connect_shortcut(ui->action_Rewind_state, SET_INP_SC_REWIND_STATE,
+			SLOT(s_state_rewind_action()));
 	// State/[Incremente slot, Decrement slot]
 	connect_shortcut(ui->action_Increment_slot, SET_INP_SC_INC_SLOT,
 			SLOT(s_state_save_slot_incdec()));
@@ -1585,6 +1587,7 @@ void mainWindow::connect_menu_signals() {
 	// State/[Save state, Load State]
 	connect_action(ui->action_Save_state, SAVE, SLOT(s_state_save_slot_action()));
 	connect_action(ui->action_Load_state, LOAD, SLOT(s_state_save_slot_action()));
+	connect_action(ui->action_Rewind_state, SLOT(s_state_rewind_action()));
 	// State/[Increment slot, Decrement slot]
 	connect_action(ui->action_Increment_slot, INC, SLOT(s_state_save_slot_incdec()));
 	connect_action(ui->action_Decrement_slot, DEC, SLOT(s_state_save_slot_incdec()));
@@ -2481,6 +2484,9 @@ void mainWindow::s_state_save_slot_incdec() {
 	state_save_slot_set(new_slot, true);
 	update_window();
 }
+void mainWindow::s_state_rewind_action() {
+	statusbar->timeline->rewind();
+}
 void mainWindow::s_state_save_slot_set() {
 	int slot = QVariant(((QObject *)sender())->property("myValue")).toInt();
 
@@ -2717,6 +2723,9 @@ void mainWindow::s_shcjoy_read_timer() {
 					break;
 				case SET_INP_SC_LOAD_STATE:
 					ui->action_Load_state->trigger();
+					break;
+				case SET_INP_SC_REWIND_STATE:
+					ui->action_Rewind_state->trigger();
 					break;
 				case SET_INP_SC_INC_SLOT:
 					ui->action_Increment_slot->trigger();
